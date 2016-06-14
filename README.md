@@ -22,8 +22,8 @@ myfunc:{[x;y]
   x+y}
 ```
 
-## Gemerating the documentation
-src/sh/qdoc.sh is a shell script that generates the documetnation. It takes 3 paramters. The first is a directory in which to search for q files. The second is a directory in which to story the output HTML. (note that this directory will be cleared out when the shell script is run, so don't put anything important in there). THe third is an optional regex that's supplied to the `-name` param of `find`. The default is `"*.q"`.
+## Generating the documentation
+`src/sh/qdoc.sh` is a shell script that generates the documetnation. It takes 3 paramters. The first is a directory in which to search for q files. The second is a directory in which to story the output HTML. (note that this directory will be cleared out when the shell script is run, so don't put anything important in there). THe third is an optional regex that's supplied to the `-name` param of `find`. The default is `"*.q"`.
 
 e.g.
 
@@ -31,4 +31,13 @@ e.g.
 src/sh/qdoc.sh test/in test/out
 ```
 
-  
+## Output
+The resulting HTML files are dumped into the output directory. These files could be served by a HTTP server, for example python's `SimpleHTTPServer`.
+
+```
+src/sh/qdoc.sh test/in test/out && cd test/out && python -m SimpleHTTPServer 8000
+```
+
+In a browser, navigate to `http://localhost:8000/qdoc_index.html`
+
+![alt tag](https://raw.githubusercontent.com/t-martin/qdoc/master/test/img/qdoc.png)
