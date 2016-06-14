@@ -1,5 +1,5 @@
 # qdoc
-qdoc HTML documentation generator for q files, based on javadoc.
+HTML documentation generator for q files, based on javadoc.
 
 ## Usage
 If you want a function to be picked up by qdoc, it must be preceded by `///`. This marks the start of the qdoc comment.
