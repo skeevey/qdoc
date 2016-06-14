@@ -9,7 +9,7 @@ A description for your function follows on the next line, preceded by `//`. This
 Following the description, you specify function parameters using `@param param_name param_description`. Again, these are preceded by `//`.
 Finally, there is an optional `@return` tag, which indicates the return value of the function.
 
-## Exmaple
+## Example
 
 ```
 ///
