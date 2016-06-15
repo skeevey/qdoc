@@ -24,7 +24,7 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
 
 .qdoc.parse.param:{[x]
   param:x 0;
-  descr:ltrim " "sv 2_x;
+  descr:ltrim " "sv 1_x;
   `param`paramDesc!(param;descr)
   };
 
@@ -82,7 +82,7 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   };
 
 .qdoc.html.function:{[x]
-  paramtxt:{"<dd><b><code>",x,"</code></b> ",y}'[.qdoc.rem x`param; .qdoc.rem x`paramDesc];
+  paramtxt:{"<dd><b><code>",x,"</code></b> ",y}'[x`param; x`paramDesc];
   (
   enlist "<a name=\"",x[`func],"\">";
   enlist "<h3>",x[`func],"</h3>";
