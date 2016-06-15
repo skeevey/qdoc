@@ -133,7 +133,7 @@ outDir:hsym `$.z.x 1;
 txt:read0 `$.z.x 0;
 f:`$last "/"vs .z.x 0;
 -1 "[qdoc] [documenting ",string[f],"]";
-funcs:(0,where "///"~/:txt) cut txt;
+funcs:(0,where "///"~/:rtrim each txt) cut txt;
 
 .qdoc.parse.func each funcs;
 
