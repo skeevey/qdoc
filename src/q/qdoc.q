@@ -60,7 +60,7 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   "<title>";
   x;
   "</title>";
-  "<line rel=\"stylesheet\" type=\"text/css\" href=\"qdoc.css\">";
+  "<link rel=\"stylesheet\" type=\"text/css\" href=\"qdoc.css\">";
   "</head>";
   "<h2>",x,"</h2><p>"
   )
