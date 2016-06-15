@@ -82,7 +82,12 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   };
 
 .qdoc.html.function:{[x]
-  paramtxt:{"<dd><b><code>",x,"</code></b> ",y}'[x`param; x`paramDesc];
+  paramtxt:raze {
+    ("<tr>";
+    "<td><b><code>",x,"</code></b></td>";
+    "<td>",y,"</td>";
+    "</tr>"
+    ) }'[x`param; x`paramDesc];
   (
   enlist "<a name=\"",x[`func],"\">";
   enlist "<h3>",x[`func],"</h3>";
@@ -94,7 +99,9 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   enlist "<p>";
   enlist "<dd><dl>";
   enlist "<dt><b>Parameters:</b><dd>";
+  enlist "<table>";
   paramtxt;
+  enlist "</table>";
   enlist "<dt><b>Returns:</b><dd>";
   .qdoc.rem x`return;
   enlist "</dl>";
