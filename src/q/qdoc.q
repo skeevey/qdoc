@@ -28,12 +28,12 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   `param`paramDesc!(param;descr)
   };
 
-.qdoc.parse.return:{[x] enlist[`return]!enlist " " sv x}
+.qdoc.parse.returns:.qdoc.parse.return:{[x] enlist[`return]!enlist " " sv x}
 
 .qdoc.parse.func:{[f]
   tagLineNum:where .qdoc.isTagLine each f;
   if[not count tagLineNum; :()]; 
-  preamble:-1_trim ` sv .qdoc.rem {.qdoc.ltrim/[x;" /"]} each f til first tagLineNum;
+  preamble:trim "<br>" sv .qdoc.rem {.qdoc.ltrim/[x;" /"]} each f til first tagLineNum;
   tagLines:f tagLineNum;
   metad:distinct (uj/)enlist each {x where count each x} .qdoc.parse.str each tagLines;
   funcName:first ":"vs f 1+max tagLineNum;
