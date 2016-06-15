@@ -82,7 +82,6 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   };
 
 .qdoc.html.function:{[x]
-  p:.qdoc.rem x`param;
   paramtxt:{"<dd><b><code>",x,"</code></b> ",y}'[.qdoc.rem x`param; .qdoc.rem x`paramDesc];
   (
   enlist "<a name=\"",x[`func],"\">";
