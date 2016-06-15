@@ -107,6 +107,7 @@ k).qdoc.rtrim:{$[~t&775>t:@x;.z.s[;y]'x;y=last x;|.qdoc.ltrim[;y]@|x;x]}
   enlist "</dl>";
   enlist "</dd>"; 
   enlist "</dl>";
+  enlist "<a href=\"#function_summary\">Back to summary</a>";
   enlist "<hr>"
   )
   };
