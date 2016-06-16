@@ -22,12 +22,12 @@ html:raze(
   enlist "<title>";
   enlist "qdoc";
   enlist "</title>";
-  enlist "<link rel=\"stylesheet\" type=\"text/css\" href=\"qdoc.css\">";
+  enlist "<link rel=\"stylesheet\" type=\"text/css\" href=\"css/qdoc.css\">";
   enlist "</head>";
   enlist "<h2>qdoc</h2><p>";
   body 
   )
 
-(` sv dir,`qdoc_index_frame.html)0:html;
+(` sv dir,`index_frame.html)0:html;
 exit 0;
 
