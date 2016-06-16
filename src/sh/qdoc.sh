@@ -18,14 +18,17 @@ pattern=$3
 
 files=$(find $input -type f -name "$pattern")
 
-rm $output/*
+rm -r $output/*
+
+mkdir -p $output/css
+mkdir -p $output/qdoc
 
 for file in ${files[@]}; do
-  q $here/../q/qdoc.q $file $output -q
+  q $here/../q/qdoc.q $file $output/qdoc -q
 done
 
-q $here/../q/qdocindex.q $output -q
+q $here/../q/qdocindex.q $output/qdoc $output -q
 
-cp $here/../html/qdoc_index.html $output
+cp $here/../html/qdoc_index.html $output/index.html
 
-cp $here/../css/qdoc.css $output
+cp $here/../css/qdoc.css $output/css/qdoc.css
