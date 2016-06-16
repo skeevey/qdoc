@@ -2,6 +2,7 @@ dir:hsym `$.z.x 0;
 files:key dir;
 files:files where files like "*.html";
 if[not count files; exit 0];
+out:hsym `$.z.x 1;
 
 getName:{[x]
   txt:read0 ` sv dir,`$x;
@@ -12,7 +13,7 @@ body:raze (
   enlist "<table border=\"0\" width=\"100%\">";
   enlist "<td>";
   enlist "<td nowrap><font class=\"FrameItemFront\">";
-  {"<a href=",x," target=\"detailsFrame\">",(getName x),"</a><br>"} each string files;
+  {"<a href=qdoc/",x," target=\"detailsFrame\">",(getName x),"</a><br>"} each string files;
   enlist "</font></td></tr><table>"
   )
 
@@ -28,6 +29,6 @@ html:raze(
   body 
   )
 
-(` sv dir,`index_frame.html)0:html;
+(` sv out,`index_frame.html)0:html;
 exit 0;
 
